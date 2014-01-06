@@ -1,0 +1,9 @@
+{
+  "name": "dpd-fileupload-demo",
+  "description": "Demo application for dpd-fileupload",
+  "version": "0.0.1",
+  "author": "Nicolas Ritouet <nicolas@ritouet.com>",
+  "dependencies": {
+    "dpd-fileupload": "0.0.4"
+  }
+}

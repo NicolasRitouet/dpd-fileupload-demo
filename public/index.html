@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="dpd.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <form role="form">
+      <!--<div class="form-group">
+        <label for="subdir">Subdir (optional)</label>
+        <input type="text" class="form-control" id="subdir" placeholder="Enter subdir">
+        </div>-->
+    <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile" onchange="setFiles(this)">
+    </div>
+  <button type="button" class="btn btn-default" onClick="uploadFiles()">Submit</button>
+</form>
+
+<button class="btn btn-default" onclick="getFiles()">Get the files</button>
+<div id="result"></div>
+
+</body>
+</html>
