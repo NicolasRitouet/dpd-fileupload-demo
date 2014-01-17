@@ -1,6 +1,8 @@
 
 var files = [];
 
+$('.alert-success').hide();
+
 var uploadFiles = function() {
 
     var fd = new FormData()
@@ -11,7 +13,12 @@ var uploadFiles = function() {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/upload'); 
     xhr.onload = function() {
-        $("#result").append("Upload successful!");
+        var response = jQuery.parseJSON(this.responseText);
+        console.log(response);
+        $('.alert-success').append("Upload successful!<br />");
+        for (var index in response) {
+           appendUploadedFileToTable(response[index]);
+        }
     };
     xhr.onerror = function(err) {
         alert("Error: ", err);
@@ -19,6 +26,15 @@ var uploadFiles = function() {
     xhr.send(fd);
 
 };
+
+var appendUploadedFileToTable = function(file) {
+    $('#result tr:last').after(
+            "<tr><td>" + file.filename + "</td><td></td>" +
+            "<td>" + new Date(file.creationDate).toLocaleString() + "</td>" +
+            "<td><button class='btn btn-default btn-sm' " +
+            "onClick='deleteFile(this, &quot;" + file.id + "&quot;)'>Delete</button></td></tr>");
+
+}
 
 var setFiles = function(element) {
   console.log('files:', element.files);
@@ -29,20 +45,16 @@ var setFiles = function(element) {
     }
 };
 
-var getFiles = function() {
-    dpd.upload.get(function(data, statusCode, headers, config) {
-        $("#result").empty();
-        for(var index in data) {
-            $("#result").append(data[index].filename + "<button  class='btn btn-default btn-sm' onClick='deleteFile(&quot;" + data[index].id + "&quot;)'>Delete</button><br />");
+dpd.upload.get(function(data, statusCode, headers, config) {
+    for(var index in data) {
+        appendUploadedFileToTable(data[index]);
+    }
+});
 
-        }
-    });
-}
-getFiles();
-
-var deleteFile = function(id) {
+var deleteFile = function(element, id) {
+    $(element).closest('tr').remove();
     dpd.upload.del(id, function(data, status) {
-       $("#result").append("File removed!");
-        getFiles();
+        $('.alert-success').show();
+        $('.alert-success').append("File removed!");
     })
 }
