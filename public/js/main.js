@@ -13,7 +13,7 @@ var uploadFiles = function() {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/upload'); 
     xhr.onload = function() {
-        var response = jQuery.parseJSON(this.responseText);
+        var response = JSON.parse(this.responseText);
         console.log(response);
         $('.alert-success').append("Upload successful!<br />");
         for (var index in response) {
