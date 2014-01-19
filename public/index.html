@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Deployd - file upload module - Demo</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -8,53 +9,65 @@
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-<a href="https://github.com/nicolasritouet/dpd-fileupload-demo">
-    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
-</a>
-<div class="container">
+    <a href="https://github.com/nicolasritouet/dpd-fileupload-demo">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+    <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="http://www.deployd.com" target="_blank">Deployd homepage</a></li>
           <li><a href="https://github.com/NicolasRitouet/dpd-fileupload/" target="_blank">Dpd-fileupload</a></li>
-        </ul>
-        <h3 class="text-muted">Dpd-fileupload-demo</h3>
-      </div>
+      </ul>
+      <h3 class="text-muted">Dpd-fileupload-demo</h3>
+  </div>
 
-      <hr/>
-    <div class="row">
+  <hr/>
+  <div class="row">
       <div class="well">
         <h4>Upload some files</h4>
         <p class="lead">
             <form role="form">
-                  <!--<div class="form-group">
-                    <label for="subdir">Subdir (optional)</label>
-                    <input type="text" class="form-control" id="subdir" placeholder="Enter subdir">
-                    </div>-->
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="exampleInputFile" onchange="setFiles(this)" multiple>
+                <div class="row">
+                    <div class="form-group col-xs-2">
+                        <label for="subdir">Subdir (optional)</label>
+                        <select id="subdir" class="form-control">
+                            <option>images</option>
+                            <option>document</option>
+                            <option>music</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-7">
+                        <label for="comments">Comments (optional)</label>
+                        <input type="text" class="form-control" id="comments" placeholder="Enter comment">
+                    </div>
                 </div>
-              <button type="button" class="btn btn-success" onClick="uploadFiles()">Submit</button>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile" onchange="setFiles(this)" multiple>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success" onClick="uploadFiles()">Submit</button>
             </form>
         </p>
-      </div>
-<div class="alert alert-success"></div>
-<div class="row marketing">
-    <table class="table table-condensed table-striped" id="result">
-        <tr>
-            <th>Filename</th>
-            <th>Sub Directory</th>
-            <th>Comments</th>
-            <th>Creation Date</th>
-            <th>Actions</th>
-        </tr>
-    </table>
-  </div>
-  </div>
+    </div>
+    <div class="alert alert-success"></div>
+    <div class="row marketing">
+        <table class="table table-condensed table-striped" id="result">
+            <tr>
+                <th>Filename</th>
+                <th>Sub Directory</th>
+                <th>Comments</th>
+                <th>Creation Date</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+</div>
 <hr />
 <div class="footer">
-        <p><span class="glyphicon glyphicon-fire"></span> Nicolas Ritouet</p>
-      </div>
+    <p><span class="glyphicon glyphicon-fire"></span> Nicolas Ritouet</p>
+</div>
 </body>
 </html>

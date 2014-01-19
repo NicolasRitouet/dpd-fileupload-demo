@@ -10,8 +10,10 @@ var uploadFiles = function() {
         fd.append("uploadedFile", files[i])
     }
 
+    var subdir = $('#subdir').val();
+    var comments = $('#comments').val();
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/upload?subdir=images&comments=This is a file'); 
+    xhr.open('POST', '/upload?subdir=' + subdir + '&comments=' + comments); 
     xhr.onload = function() {
         var response = JSON.parse(this.responseText);
         console.log(response);
