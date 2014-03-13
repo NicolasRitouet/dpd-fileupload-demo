@@ -1,4 +1,4 @@
 {
 	"type": "Fileupload",
-	"directory": "upload"
+	"directory": "upload_"
 }

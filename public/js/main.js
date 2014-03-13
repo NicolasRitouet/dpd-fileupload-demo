@@ -12,8 +12,9 @@ var uploadFiles = function() {
 
     var subdir = $('#subdir').val();
     var comments = $('#comments').val();
+    var uniqueFilename = $('#uniqueFilename').prop('checked');
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/upload?subdir=' + subdir + '&comments=' + comments); 
+    xhr.open('POST', '/upload?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename); 
     xhr.onload = function() {
         var response = JSON.parse(this.responseText);
         console.log(response);
@@ -31,9 +32,11 @@ var uploadFiles = function() {
 
 var appendUploadedFileToTable = function(file) {
     $('#result tr:last').after(
-            "<tr><td>" + file.filename + "</td>" +
+            "<tr><td><a href='upload_/" + file.subdir + "/" + file.filename + "'>" + file.filename + "</a></td>" +
             "<td>" + file.subdir + "</td>" +
             "<td>" + file.comments + "</td>" +
+            "<td>" + file.filesize + "</td>" +
+            "<td>" + file.originalFilename + "</td>" +
             "<td>" + new Date(file.creationDate).toLocaleString() + "</td>" +
             "<td><button class='btn btn-default btn-sm' " +
             "onClick='deleteFile(this, &quot;" + file.id + "&quot;)'>Delete</button></td></tr>");
