@@ -2,14 +2,14 @@
 
 Demo application for [dpd-fileupload](https://github.com/NicolasRitouet/dpd-fileupload/) ([Deployd](http://deployd.com/) module)
 
-![Screenshort](https://raw2.github.com/NicolasRitouet/nicolasritouet.github.io/master/images/screenshot-dpd-fileupload-demo.png)
+![Screenshot](https://raw2.github.com/NicolasRitouet/nicolasritouet.github.io/master/images/screenshot-dpd-fileupload-demo.png)
 
 ## Usage
-Make sure you already [installed Deployd](http://deployd.com/download.html).
+Make sure you already have mongoDB running.
 ``` shell
 $ git clone  https://github.com/NicolasRitouet/dpd-fileupload-demo.git
 $ npm install
-$ dpd -o
+$ node server.js
 
 ```
 

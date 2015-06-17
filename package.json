@@ -1,9 +1,20 @@
 {
   "name": "dpd-fileupload-demo",
   "description": "Demo application for dpd-fileupload",
-  "version": "0.0.2",
   "author": "Nicolas Ritouet <nicolas@ritouet.com>",
+  "version": "0.0.3",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolasRitouet/dpd-fileupload-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicolasRitouet/dpd-fileupload-demo/issues"
+  },
+  "homepage": "https://github.com/NicolasRitouet/dpd-fileupload-demo",
   "dependencies": {
-    "dpd-fileupload": "~0.0.10"
-  }
+    "deployd": "~0.8.4",
+    "dpd-fileupload": "^0.0.14"
+  },
+  "license": "MIT"
 }
