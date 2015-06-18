@@ -2,7 +2,7 @@
 
 Demo application for [dpd-fileupload](https://github.com/NicolasRitouet/dpd-fileupload/) ([Deployd](http://deployd.com/) module)
 
-![Screenshot](https://raw2.github.com/NicolasRitouet/nicolasritouet.github.io/master/images/screenshot-dpd-fileupload-demo.png)
+![Screenshot](https://raw.githubusercontent.com/NicolasRitouet/nicolasritouet.github.io/master/images/screenshot-dpd-fileupload-demo.png)
 
 ## Usage
 Make sure you already have mongoDB running.
