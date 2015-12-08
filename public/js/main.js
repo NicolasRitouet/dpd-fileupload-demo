@@ -14,13 +14,17 @@ var uploadFiles = function() {
     var comments = $('#comments').val();
     var uniqueFilename = $('#uniqueFilename').prop('checked');
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/upload?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename); 
+    xhr.open('POST', '/upload?subdir=' + subdir + '&comments=' + comments + '&uniqueFilename=' + uniqueFilename);
     xhr.onload = function() {
         var response = JSON.parse(this.responseText);
         console.log(response);
-        $('.alert-success').append("Upload successful!<br />");
-        for (var index in response) {
-           appendUploadedFileToTable(response[index]);
+        if (this.status < 300) {
+          $('.alert-success').append("Upload successful!<br />");
+          for (var index in response) {
+             appendUploadedFileToTable(response[index]);
+          }
+        } else {
+          alert(response.message);
         }
     };
     xhr.onerror = function(err) {
