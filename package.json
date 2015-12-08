@@ -14,7 +14,7 @@
   "homepage": "https://github.com/NicolasRitouet/dpd-fileupload-demo",
   "dependencies": {
     "deployd": "~0.8.5",
-    "dpd-fileupload": "0.0.16"
+    "dpd-fileupload": "0.0.17"
   },
   "license": "MIT"
 }
